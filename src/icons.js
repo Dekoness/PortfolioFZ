@@ -21,7 +21,6 @@ import {
     SiFirebase,
     SiVercel,
     SiNetlify,
-    SiMicrosoftazure,
 } from "react-icons/si";
 import {
     FiCode,
@@ -57,7 +56,8 @@ export function techIconFor(name) {
     if (n.includes("firebase")) return SiFirebase;
     if (n.includes("vercel")) return SiVercel;
     if (n.includes("netlify")) return SiNetlify;
-    if (n.includes("azure")) return SiMicrosoftazure;
+    // Azure icon not available in current react-icons version; fallback
+    if (n.includes("azure")) return FiCloud;
     if (n.includes("github")) return SiGithub;
     if (n.includes("linkedin")) return SiLinkedin;
 
