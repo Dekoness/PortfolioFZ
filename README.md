@@ -2,12 +2,7 @@
 
 Proyecto de portfolio de desarrollador web usando React + Vite y CSS puro.
 
-## Contenido editable
-
-Toda la información (nombre, descripción, habilidades, proyectos, experiencia, formación y contacto) se edita en `src/content.json`. No necesitas cambiar el código para actualizar el contenido.
-
 ## Requisitos
-- Node.js 18+
 
 ## Comandos
 ```powershell
@@ -23,6 +18,20 @@ npm run build
 # previsualizar build
 npm run preview
 ```
+# Portfolio FZ
 
-## Assets
-Coloca tu `avatar.jpg`, `cv.pdf` y las imágenes de proyectos dentro de `public/`.
+Deploy on Vercel
+
+- Build: `npm run build`
+- Output: `dist`
+- Framework: Vite + React
+
+Environment variables (Vercel Project Settings → Environment Variables):
+- `RESEND_API_KEY`: your Resend API key
+- `RESEND_TO_EMAIL`: destination email address
+
+Contact API route: `/api/contact` (Vercel Serverless Function).
+
+Local dev:
+- `npm run dev` for SPA
+- Use `vercel dev` to test the API route locally.
