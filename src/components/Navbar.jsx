@@ -73,6 +73,11 @@ export default function Navbar({ sections, theme, onToggleTheme }) {
           }}
           title="Ir al inicio"
         >
+          <div className="window-controls" aria-hidden>
+            <span className="wc red" />
+            <span className="wc yellow" />
+            <span className="wc green" />
+          </div>
           <FiTerminal color="#5b47d3" />
           {sections[0]?.label || "Portfolio"}
         </div>
@@ -85,19 +90,22 @@ export default function Navbar({ sections, theme, onToggleTheme }) {
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {sections.slice(1).map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo(s.id);
-              }}
-              className={active === s.id ? "active" : ""}
-            >
-              {s.label}
-            </a>
-          ))}
+          {sections.slice(1).map((s) => {
+            const label = fileLabelForSection(s.label);
+            return (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(s.id);
+                }}
+                className={active === s.id ? "active" : ""}
+              >
+                {label}
+              </a>
+            );
+          })}
           <button
             className="btn"
             onClick={onToggleTheme}
@@ -109,4 +117,15 @@ export default function Navbar({ sections, theme, onToggleTheme }) {
       </div>
     </nav>
   );
+}
+
+function fileLabelForSection(label) {
+  const n = String(label).toLowerCase();
+  if (n.includes("sobre")) return "SobreMi.py";
+  if (n.includes("habil")) return "skills.json";
+  if (n.includes("proy")) return "Projects.md";
+  if (n.includes("exper")) return "Experience.ts";
+  if (n.includes("formac") || n.includes("educ")) return "Education.tsx";
+  if (n.includes("contact")) return "contact.tsx";
+  return label;
 }

@@ -5,6 +5,92 @@ import content from "./content.json";
 import { TechIcon } from "./icons";
 import { FiDownload, FiMail, FiUser } from "react-icons/fi";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+function SectionTabs({ active }) {
+  const files = [
+    { id: "about", label: "SobreMi.py" },
+    { id: "skills", label: "skills.json" },
+    { id: "projects", label: "Projects.md" },
+    { id: "experience", label: "Experience.ts" },
+    { id: "education", label: "Education.tsx" },
+    { id: "contact", label: "contact.tsx" },
+  ];
+  return (
+    <div className="tabs">
+      <div className="tabs-inner">
+        {files.map((f) => (
+          <a
+            key={f.id}
+            href={`#${f.id}`}
+            className={`tab ${active === f.id ? "active" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById(f.id);
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            {f.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+function EditorGutter() {
+  const [count, setCount] = useState(120);
+  const [activeTop, setActiveTop] = useState(0);
+  const [startNum, setStartNum] = useState(1);
+  useEffect(() => {
+    const compute = () => {
+      // Match CSS line-height ~22px in .editor-gutter li
+      const perLine = 22;
+      const padding = 10 + 10; // top/bottom padding from CSS (padding:10px 6px)
+      const available = window.innerHeight - padding;
+      const lines = Math.max(30, Math.ceil(available / perLine) + 10);
+      setCount(lines);
+      // Active line marker at viewport center
+      const center = window.innerHeight / 2;
+      const lineIndex = Math.max(0, Math.floor(center / perLine));
+      const top = 10 + lineIndex * perLine; // 10 = top padding
+      setActiveTop(top);
+      // Starting line number based on scroll position
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const start = Math.max(1, Math.floor(scrollY / perLine) + 1);
+      setStartNum(start);
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    const onScroll = () => {
+      const perLine = 22;
+      const center = window.innerHeight / 2;
+      const lineIndex = Math.max(0, Math.floor(center / perLine));
+      const top = 10 + lineIndex * perLine;
+      setActiveTop(top);
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const start = Math.max(1, Math.floor(scrollY / perLine) + 1);
+      setStartNum(start);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("resize", compute);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+  const lines = Array.from({ length: count }, (_, i) => startNum + i);
+  return (
+    <>
+      <ol className="editor-gutter" aria-hidden>
+        {lines.map((n) => (
+          <li key={n}>{n}</li>
+        ))}
+      </ol>
+      <div
+        className="editor-active-line"
+        style={{ top: activeTop }}
+        aria-hidden
+      />
+    </>
+  );
+}
 
 function Hero({ profile }) {
   const [imgOk, setImgOk] = useState(true);
@@ -58,7 +144,8 @@ function About({ text }) {
   return (
     <section id="about" className="section">
       <div className="container">
-        <h2>Sobre mí</h2>
+        <SectionTabs active="about" />
+        <h2 style={{ textAlign: "center" }}>Sobre mí</h2>
         <p className="desc">{text}</p>
       </div>
     </section>
@@ -71,7 +158,8 @@ function Skills({ skills }) {
     return (
       <section id="skills" className="section">
         <div className="container">
-          <h2>Habilidades Técnicas</h2>
+          <SectionTabs active="skills" />
+          <h2 style={{ textAlign: "center" }}>Habilidades Técnicas</h2>
           <div className="skills">
             {skills.map((s) => (
               <span key={s} className="tag">
@@ -87,7 +175,8 @@ function Skills({ skills }) {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <h2>Habilidades Técnicas</h2>
+        <SectionTabs active="skills" />
+        <h2 style={{ textAlign: "center" }}>Habilidades Técnicas</h2>
         <div style={{ display: "grid", gap: 24 }}>
           {entries.map(([group, list]) => (
             <div key={group}>
@@ -111,7 +200,8 @@ function Projects({ projects }) {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <h2>Proyectos Destacados</h2>
+        <SectionTabs active="projects" />
+        <h2 style={{ textAlign: "center" }}>Proyectos Destacados</h2>
         <div className="grid">
           {projects.map((p) => (
             <div key={p.title} className="card">
@@ -152,7 +242,8 @@ function Experience({ items }) {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <h2>Experiencia Laboral</h2>
+        <SectionTabs active="experience" />
+        <h2 style={{ textAlign: "center" }}>Experiencia Laboral</h2>
         <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
           {items.map((x) => (
             <div key={x.company + x.role} className="card">
@@ -173,7 +264,8 @@ function Education({ items }) {
   return (
     <section id="education" className="section">
       <div className="container">
-        <h2>Formación</h2>
+        <SectionTabs active="education" />
+        <h2 style={{ textAlign: "center" }}>Formación</h2>
         <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
           {items.map((e) => (
             <div key={e.title + e.institution} className="card">
@@ -277,7 +369,8 @@ function Contact({ contact }) {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <h2>Contacto</h2>
+        <SectionTabs active="contact" />
+        <h2 style={{ textAlign: "center" }}>Contacto</h2>
         <div className="card" style={{ maxWidth: 640, margin: "0 auto" }}>
           <p className="desc">Escríbeme y te respondo a la brevedad.</p>
           <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
@@ -423,6 +516,7 @@ export default function App() {
         className="grid-pulse"
         style={{ ["--x"]: pulsePos.x, ["--y"]: pulsePos.y }}
       />
+      <EditorGutter />
       <Navbar
         sections={sections}
         theme={theme}
@@ -438,6 +532,16 @@ export default function App() {
       <footer className="footer">
         <div className="container">© {content.profile.actualization}</div>
       </footer>
+      <div className="status-bar">
+        <div className="container status-inner">
+          <span className="status-seg">UTF-8</span>
+          <span className="status-seg">LF</span>
+          <span className="status-seg">React · Vite</span>
+          <span className="status-seg">
+            Tema: {theme === "dark" ? "Dark" : "Light"}
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
