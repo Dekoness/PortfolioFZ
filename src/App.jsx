@@ -251,7 +251,26 @@ function Experience({ items }) {
               <div style={{ color: "var(--muted)" }}>
                 {x.role} · {x.period}
               </div>
-              <p className="desc">{x.details}</p>
+              {Array.isArray(x.details) ? (
+                <ul
+                  className="desc"
+                  style={{
+                    textAlign: "left",
+                    margin: "8px auto 0",
+                    maxWidth: 680,
+                    listStyle: "none",
+                    paddingLeft: 0,
+                  }}
+                >
+                  {x.details.map((d, i) => (
+                    <li key={i} style={{ margin: "6px 0" }}>
+                      <span style={{ color: "var(--muted)" }}>–</span> {d}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="desc">{x.details}</p>
+              )}
             </div>
           ))}
         </div>

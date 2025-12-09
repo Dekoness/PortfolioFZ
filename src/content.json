@@ -80,9 +80,14 @@
   "experience": [
     {
       "company": "TechVortex Solutions S.r.l.",
-      "role": "Backend Developer (IA)",
+      "role": "Practicas Backend Developer (IA)",
       "period": "03/2024 - 09/2024",
-      "details": "Desarrollo de features en frontend y backend, optimización de rendimiento."
+      "details": [
+        "Desarrollo de features en frontend y backend; optimización de rendimiento.",
+        "Desarrollo de asistentes de IA con LangGraph/LangChain para agencias de viajes PYMES.",
+        "Automatización de procesos de reserva y atención al cliente 24/7.",
+        "Sistemas de recomendación de destinos con RAG y embeddings."
+      ]
     }
   ],
   "education": [
