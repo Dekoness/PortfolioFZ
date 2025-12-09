@@ -20,7 +20,7 @@ npm run preview
 ```
 # Portfolio FZ
 
-Deploy on Vercel
+Deploy on Vercel (actualizado)
 
 - Build: `npm run build`
 - Output: `dist`
