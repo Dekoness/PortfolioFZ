@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
-  "ignoreCommand": "echo 'Use .vercelignore'"
+  "framework": "vite"
 }
