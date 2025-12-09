@@ -1,0 +1,109 @@
+{
+  "profile": {
+    "name": "Federico Zoppi",
+    "role": "Desarrollador Full-Stack",
+    "description": "Mi superpoder: aprender en tiempo récord lo que tu equipo necesita.",
+    "avatar": "/images/fotoPerfil.jpg",
+    "location": "Valencia, España",
+    "cvUrl": "https://drive.google.com/file/d/1taRqsbK_LAkIat7m_aiSNu06YpRrVN0D/view?usp=drive_link",
+    "github": "https://github.com/Dekoness",
+    "linkedin": "https://www.linkedin.com/in/federico-zoppi-tech/",
+    "actualization": "Actualizado: Diciembre 2025"
+  },
+  "about": {
+    "text": "Desarrollador Full Stack, con gran motivación y disciplina para aprender y crecer profesionalmente. Mi trayectoria de autodesarrollo y reciente formación intensiva me han proporcionado una base sólida en tecnologías modernas, siempre con el foco en crear soluciones funcionales y centradas en el usuario. Busco una oportunidad profesional donde pueda aportar entusiasmo, dedicación y mi rápida capacidad de adaptación, mientras continúo expandiendo mis habilidades en un entorno colaborativo."
+  },
+  "skills": {
+    "Front-End": [
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "SASS/SCSS"
+    ],
+    "Back-End": [
+      "Python",
+      "Flask",
+      "FastAPI",
+      "Node.js",
+      "RESTful APIs",
+      "SQLAlchemy",
+      "JWT",
+      "PostgreSQL"
+    ],
+    "IA & NLP": [
+      "OpenAI API",
+      "DeepSeek",
+      "LangChain",
+      "LangGraph",
+      "LangSmith",
+      "RAG",
+      "Embeddings",
+      "Prompt Engineering"
+    ],
+    "Plataformas & DevOps": [
+      "Git/GitHub",
+      "Docker",
+      "Firebase",
+      "Vercel",
+      "Netlify",
+      "Render",
+      "Railway",
+      "Azure"
+    ],
+    "Metodología": ["Agile/Scrum"]
+  },
+  "projects": [
+    {
+      "title": "Asistente de Viajes",
+      "description": "Asistente de viaje con FastAPI (backend), Next.js (frontend), LangGraph (orquestación) y modelo local Llama3.2 vía Ollama. Extrae contexto, consulta herramientas (vuelos, hoteles, clima, moneda), genera itinerarios que requieren aprobación y exporta a PDF.",
+      "image": "/images/IAviajes.webp",
+      "repo": "https://github.com/Dekoness/agente-de-viaje"
+    },
+    {
+      "title": "Flazic API",
+      "description": "Backend API para una aplicación web de música destinada a oyentes y artistas emergentes (FAST API)",
+      "image": "/images/FastApi.webp",
+      "url": "https://fla-zic-api.vercel.app/docs",
+      "repo": "https://github.com/Dekoness/FlaZic-API"
+    },
+    {
+      "title": "Mi rincón escondido",
+      "description": "Plataforma completa de reservas de cabañas en España con sistema de búsqueda, gestión de reservas y panel de administración. Desarrollada con React, TypeScript y Node.js. Y Backend con FastAPI. Utiliza tambien Api externas como Stripe para pagos, Cloudinary para gestión de imágenes, google maps para geolocalización y SendGrid para envió de emails.",
+      "image": "/images/MiRinconEscondido.webp",
+      "repo": "https://github.com/NandoR89/mi-rincon-escondido"
+    }
+  ],
+  "experience": [
+    {
+      "company": "TechVortex Solutions S.r.l.",
+      "role": "Backend Developer (IA)",
+      "period": "03/2024 - 09/2024",
+      "details": "Desarrollo de features en frontend y backend, optimización de rendimiento."
+    }
+  ],
+  "education": [
+    {
+      "title": "AI-900 Microsoft Azure",
+      "institution": "Microsoft",
+      "period": "2025-Actualidad"
+    },
+    {
+      "title": "Full-Stack Developer",
+      "institution": "4Geeks Academy",
+      "period": "03/2025 - 08/2025"
+    },
+    {
+      "title": "FP Grado Superior en Sistemas Eléctricos y Automatización Industrial",
+      "institution": "IES Patacona",
+      "period": "09/2021 - 06/2023"
+    }
+  ],
+  "contact": {
+    "email": "federicozoppi.ita@gmail.com",
+    "phone": "+34 642813243"
+  }
+}
