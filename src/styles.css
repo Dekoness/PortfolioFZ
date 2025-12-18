@@ -180,4 +180,28 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
 }
 
 /* Panel-like look for cards to mimic editor panes */
-.card{ box-shadow: 0 2px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.05) }
+.card{ box-shadow: 0 2px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.05)}
+
+/* Hero centrado en todos los tamaños */
+.hero .row{
+  /* Ignora el layout general .row (1fr 2fr) y usa columnas de tamaño contenido */
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center;
+  gap: 24px;
+}
+.hero .avatar{
+  justify-self: center; /* asegura que la imagen no se pegue al borde izquierdo */
+}
+.hero .row > div{
+  max-width: 720px;     /* limita el ancho del texto para mantener la centralidad */
+  text-align: center;
+}
+
+/* En pantallas anchas, dos columnas pero centradas */
+@media (min-width: 992px){
+  .hero .row{
+    grid-template-columns: auto auto; /* imagen + texto */
+    justify-content: center;          /* centra el conjunto dentro del container */
+  }
+}

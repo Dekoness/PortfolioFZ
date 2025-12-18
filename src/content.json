@@ -11,48 +11,68 @@
     "actualization": "Actualizado: Diciembre 2025"
   },
   "about": {
-    "text": "Desarrollador Full Stack, con gran motivación y disciplina para aprender y crecer profesionalmente. Mi trayectoria de autodesarrollo y reciente formación intensiva me han proporcionado una base sólida en tecnologías modernas, siempre con el foco en crear soluciones funcionales y centradas en el usuario. Busco una oportunidad profesional donde pueda aportar entusiasmo, dedicación y mi rápida capacidad de adaptación, mientras continúo expandiendo mis habilidades en un entorno colaborativo."
+    "text": "Desarrollador Full Stack, con gran motivación y disciplina para aprender y crecer profesionalmente. Mi trayectoria de autodesarrollo y reciente formación intensiva me han proporcionado una base sólida en tecnologías modernas, siempre con el foco en crear soluciones funcionales y centradas en el usuario."
   },
   "skills": {
     "Front-End": [
-      "JavaScript (ES6+)",
-      "TypeScript",
       "React.js",
       "Next.js",
-      "HTML5",
-      "CSS3",
+      "TypeScript",
       "Tailwind CSS",
-      "SASS/SCSS"
+      "CSS3",
+      "Socket.io",
+      "React Query",
+      "Zustand",
+      "Framer Motion",
+      "Responsive Design",
+      "Component Libraries",
+      "Performance Optimization"
     ],
     "Back-End": [
-      "Python",
-      "Flask",
-      "FastAPI",
       "Node.js",
-      "RESTful APIs",
-      "SQLAlchemy",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "BullMQ",
+      "Redis",
       "JWT",
-      "PostgreSQL"
-    ],
-    "IA & NLP": [
-      "OpenAI API",
-      "DeepSeek",
-      "LangChain",
-      "LangGraph",
-      "LangSmith",
-      "RAG",
-      "Embeddings",
-      "Prompt Engineering"
+      "Microservicios",
+      "Arquitectura Event-Driven",
+      "Colas de Mensajería",
+      "API RESTful",
+      "Docker",
+      "MongoDB Atlas",
+      "Vector Search",
+      "Caching Strategies"
     ],
     "Plataformas & DevOps": [
-      "Git/GitHub",
+      "Git",
+      "GitHub Actions",
       "Docker",
-      "Firebase",
       "Vercel",
-      "Netlify",
-      "Render",
       "Railway",
-      "Azure"
+      "MongoDB Atlas",
+      "Jest",
+      "Mocha",
+      "Supertest",
+      "Postman",
+      "Sentry",
+      "LogRocket",
+      "CI/CD Pipelines",
+      "Performance Testing"
+    ],
+    "IA": [
+      "OpenAI API",
+      "LangChain",
+      "LangGraph",
+      "RAG Pipelines",
+      "Embeddings",
+      "Vector Databases",
+      "Prompt Engineering",
+      "Fine-tuning",
+      "Semantic Search",
+      "Workers Asíncronos",
+      "Data Processing Pipelines"
     ],
     "Metodología": ["Agile/Scrum"]
   },
@@ -79,14 +99,29 @@
   ],
   "experience": [
     {
+      "company": "Mi Rincon Escondido",
+      "role": "Full Stack Developer",
+      "period": "03/2025 - 07/2025",
+      "details": [
+        "Desarrollo end-to-end de plataforma con arquitectura MERN (MongoDB, Express.js, React, Node.js)",
+        "Implementación de sistema de procesamiento asíncrono y colas paraoperaciones en background",
+        "Integración de múltiples APIs externas (Google Maps, Stripe,loudinary) con manejo de errores robusto",
+        "Diseño de API RESTful escalable con autenticación JWT y autorización por roles",
+        "Optimización de rendimiento frontend con React, Tailwind CSS y técnicas de caching",
+        "Implementación de arquitectura responsive-first y mejoras en UX/UI"
+      ]
+    },
+    {
       "company": "TechVortex Solutions S.r.l.",
       "role": "Practicas Backend Developer (IA)",
-      "period": "03/2024 - 09/2024",
+      "period": "03/2023 - 09/2024",
       "details": [
-        "Desarrollo de features en frontend y backend; optimización de rendimiento.",
-        "Desarrollo de asistentes de IA con LangGraph/LangChain para agencias de viajes PYMES.",
-        "Automatización de procesos de reserva y atención al cliente 24/7.",
-        "Sistemas de recomendación de destinos con RAG y embeddings."
+        "Desarrollo de arquitecturas de IA con LangGraph/LangChain para sistemas conversacionales.",
+        "Implementación de pipelines RAG (Retrieval-Augmented Generation) completos con embeddings y búsqueda vectorial.",
+        "Creación de workers asíncronos para procesamiento de datos y automatización de procesos.",
+        "Integración de agentes de IA con APIs externas para reservas 24/7 y atención al cliente.",
+        "Optimización de rendimiento backend y sistemas de recomendación semántica.",
+        "Implementación de tests automatizados y monitoreo de sistemas de IA."
       ]
     }
   ],
